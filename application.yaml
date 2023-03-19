@@ -1,0 +1,13 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: demo1
+  namespace: openshift-gitops
+spec:
+  destination:
+    namespace: argocd-test1
+    server: 'https://kubernetes.default.svc'
+  project: default
+  source:
+    path: test1
+    repoURL: 'http://192.168.23.210:7990/scm/sam/argocd-openshift'
